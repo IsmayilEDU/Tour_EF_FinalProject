@@ -62,7 +62,7 @@ namespace Models.Classes.DeriverdClasses
             }
         }
 
-        //  Number of seats
+        //  Count of seats
         private int _seatsCount;
         public int SeatCount
         {
@@ -73,8 +73,6 @@ namespace Models.Classes.DeriverdClasses
                 else throw new Exception("SeatCount is incorrect!");
             }
         }
-
-        
 
         #endregion
 

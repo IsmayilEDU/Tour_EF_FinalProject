@@ -7,19 +7,21 @@ using System.Threading.Tasks;
 
 namespace Models.Classes.DeriverdClasses
 {
-    public class CarTour : IId
+    internal class TourLocation : IId
     {
+
         #region Fields
         public int Id { get ; init ; }
-        public int CarId { get; set; }
+
         public int TourId { get; set; }
+
+        public int LocationId { get; set; }
 
         #endregion
 
         #region Navigation properties
-        public virtual Car Car { get; set; }
         public virtual Tour Tour { get; set; }
+        public virtual Location Location { get; set; }
         #endregion
-
     }
 }

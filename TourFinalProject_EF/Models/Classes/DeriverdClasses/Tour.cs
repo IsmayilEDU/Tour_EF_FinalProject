@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace Models.Classes.DeriverdClasses
 {
-    public class Tour
+    public class Tour : IId
     {
         #region Fields
+        //  Id
+        public int Id { get ; init ; }
+
 
         #endregion
 

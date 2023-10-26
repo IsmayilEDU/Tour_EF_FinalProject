@@ -7,10 +7,42 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Templates\UserControls\TextBoxWithPlaceHolder.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="Templates\StaticVariables\Colors.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Templates\StaticVariables\Fonts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\Styles\Button\sButtonWithTextAndIcon.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\Styles\Button\sCircleButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\Styles\Page\sPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\Styles\Textblock\sMenuname_Textblock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\Styles\Textblock\sProperty_Textblock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\Styles\Textblock\sTitleOfTextBox_Textblock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\Styles\Textblock\sValue_Textblock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\Styles\Window\sHorizontalWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\UserControls\TextBoxWithPlaceHolder.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

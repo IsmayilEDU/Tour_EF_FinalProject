@@ -19,7 +19,7 @@ namespace Models.Classes.DeriverdClasses
         #endregion
 
         #region Navigation properties
-        public ICollection<TourleaderTour> TourleaderTours { get; set; }
+        public ICollection<Tour> Tours { get; set; }
         #endregion
     }
 }

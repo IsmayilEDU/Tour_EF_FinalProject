@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models.Classes.DeriverdClasses
 {
-    internal class TourLocation : IId
+    public class TourLocation : IId
     {
 
         #region Fields

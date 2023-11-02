@@ -27,7 +27,8 @@ namespace Database.Configurations
             #endregion
 
             #region Relations with other tables
-
+            builder.HasOne(cartour => cartour.Car).WithMany(car => car.CarTours).HasForeignKey(cartour => cartour.CarId);
+            builder.HasOne(cartour => cartour.Tour).WithMany(tour => tour.CarTours).HasForeignKey(cartour => cartour.TourId);
             #endregion
 
         }

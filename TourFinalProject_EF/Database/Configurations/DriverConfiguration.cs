@@ -15,6 +15,7 @@ namespace Database.Configurations
         {
 
             #region Configure fields
+
             //  Id
             builder.HasKey(driver => driver.Id);
             builder.Property(driver => driver.Id).HasColumnName("Id").HasColumnType("int").UseIdentityColumn(1, 1).IsRequired();
@@ -30,6 +31,9 @@ namespace Database.Configurations
 
             //  Category of license of driver
             builder.Property(driver => driver.driverLicenseCategory).HasColumnName("driverLicenseCategory").HasColumnType("nvarchar(1)").IsRequired();
+
+            //  CarId
+            builder.Property(driver => driver.CarId).HasColumnName("CarId").HasColumnType("int").IsRequired();
             #endregion
 
             #region Relations with other tables

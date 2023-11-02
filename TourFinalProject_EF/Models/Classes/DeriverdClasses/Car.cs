@@ -74,6 +74,9 @@ namespace Models.Classes.DeriverdClasses
             }
         }
 
+        //  DriverId
+        public int DriverId { get; set; }
+
         #endregion
 
         #region Navigation properties

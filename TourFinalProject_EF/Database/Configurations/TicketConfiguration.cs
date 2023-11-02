@@ -31,7 +31,8 @@ namespace Database.Configurations
             #endregion
 
             #region Relations with other tables
-
+            builder.HasOne(ticket => ticket.Tour).WithMany(tour => tour.Tickets).HasForeignKey(ticket => ticket.TourId);
+            builder.HasOne(ticket => ticket.Tourist).WithMany(tourist => tourist.Tickets).HasForeignKey(ticket => ticket.TouristId);
             #endregion
 
         }

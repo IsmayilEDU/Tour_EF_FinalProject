@@ -15,6 +15,8 @@ namespace Models.Classes.DeriverdClasses
         public int Id { get ; init ; }
         public DriverLicenseCategory driverLicenseCategory { get; set; }
 
+        public int CarId { get; set; }
+
         #endregion
 
         #region Navigation properties

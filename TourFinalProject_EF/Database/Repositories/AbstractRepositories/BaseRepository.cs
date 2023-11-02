@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Database.Repositories.AbstractRepositories
 {
-    public class BaseRepository
+    public abstract class BaseRepository
     {
     }
 }

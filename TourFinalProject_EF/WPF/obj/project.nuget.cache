@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "7/j1Xtwipls3iPZu+4GZ0Kt8+g8agQsQcmaZdc0RKis65lGx/AswkWWeDoYFXmaz8hPCOF79hj55s3W+zLCzRg==",
+  "dgSpecHash": "nkQRkp0p0iPj/+P/CMGgXpdsE93TIPK6UOCXKpkTzOgTiwyk1YATnkTyF/JZsknoM4+6/yKTRSl10LnTcSVyxg==",
   "success": true,
   "projectFilePath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\Tour_FinalProject\\Tour_EF_FinalProject\\TourFinalProject_EF\\WPF\\WPF.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\MSI NOTEBOOK\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512"
+    "C:\\Users\\MSI NOTEBOOK\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",
+    "C:\\Users\\MSI NOTEBOOK\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",
+    "C:\\Users\\MSI NOTEBOOK\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
+    "C:\\Users\\MSI NOTEBOOK\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
   ],
   "logs": [
     {

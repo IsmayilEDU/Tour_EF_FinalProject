@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\WPF\App.xaml
-12037912366
+2-2085740876
 
-41394307064
+5-883666042
 1981365346338
-Views\StartViews\LoginView.xaml;
+Views\StartViews\LoginView.xaml;Views\StartViews\RegisterView.xaml;
 
 False
 

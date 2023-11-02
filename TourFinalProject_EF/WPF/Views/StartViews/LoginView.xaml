@@ -32,20 +32,20 @@
                 
                 <!--Menu name-->
                 <Label Content="Sign in" Foreground="{StaticResource MaterialDesignLightForeground}" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" />
-                
-                <!--Label of textbox of login-->
-                <Label Content="Login" Foreground="{StaticResource cPurple}" FontSize="20" FontWeight="Bold" Margin="0 20"/>
-                
-                <!--Textbox of login-->
+
+                <!--Label of textbox of Username-->
+                <Label Content="Username" Foreground="{StaticResource cPurple}" FontSize="20" FontWeight="Bold" Margin="0 20"/>
+
+                <!--Textbox of Username-->
                 <TextBox
-                        x:Name="NameTextBox" FontSize="20"
+                        x:Name="textbox_Username" FontSize="20"
                         Foreground="{StaticResource cPurple}"
                         materialDesign:HintAssist.HelperText="Helper text longer than error"
                         materialDesign:HintAssist.Hint="Name">    
                 </TextBox>
 
 
-                <!--Label of textbox of login-->
+                <!--Label of textbox of password-->
                 <Label Content="Password" Foreground="{StaticResource cPurple}" FontSize="20" FontWeight="Bold" Margin="0 20"/>
                 <PasswordBox
                     BorderBrush="{StaticResource cPurple}"

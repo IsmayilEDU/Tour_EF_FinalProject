@@ -13,9 +13,10 @@
                 
                 <!--#region Colors-->
                 <ResourceDictionary>
-                    <SolidColorBrush x:Key="cPurple" Color="#B47FFF"/>
-                    <SolidColorBrush x:Key="cWhite" Color="#FFF"/>
-                    <SolidColorBrush x:Key="cGray" Color="#F7F9FC"/>
+                    <SolidColorBrush x:Key="cMenuBackground" Color="#7163BA"/>
+                    <SolidColorBrush x:Key="cBackground" Color="#CFD6E3"/>
+                    <SolidColorBrush x:Key="cSelectedMenuItem" Color="#594F7C"/>
+                    <SolidColorBrush x:Key="cWhite" Color="#FFFFFF"/>
                 </ResourceDictionary>
                 <!--#endregion-->
                 

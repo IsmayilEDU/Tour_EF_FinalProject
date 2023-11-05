@@ -22,7 +22,7 @@
         
         <!--#region Title-->
         <DockPanel 
-            Background="{StaticResource cPurple}">
+            Background="{StaticResource cWhite}">
             
             <!--Icon-->
             <materialDesign:PackIcon 
@@ -54,8 +54,8 @@
         
         <!--#region App-->
         <materialDesign:Card Grid.Row="1"
-        Background="{StaticResource cGray}">
-            <TabControl 
+        Background="{StaticResource cBackground}">
+            <TabControl Background="{StaticResource cBackground}"
             Style="{StaticResource MaterialDesignFilledTabControl}" 
             TabStripPlacement="Top">
 
@@ -67,8 +67,8 @@
 
                         <!--#region Columns-->
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
                             <ColumnDefinition />
+                            <ColumnDefinition Width="2*"/>
                         </Grid.ColumnDefinitions>
                         <!--#endregion-->
 
@@ -78,8 +78,8 @@
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="ListViewItem">
-                                                <Border Name="border" Height="50" CornerRadius="20" Margin="5"
-                                                        BorderBrush="Transparent" Background="{StaticResource cGray}" >
+                                                <Border Name="border" Height="50" CornerRadius="20 0 0 20" Margin="0 10 0 0"
+                                                        BorderBrush="Transparent" Background="{StaticResource cMenuBackground}" >
                                                     <StackPanel Orientation="Horizontal">
                                                         <Label Content="{Binding Name}" FontSize="20" />
                                                         <Label Content=" " FontSize="20" />
@@ -88,11 +88,11 @@
                                                 </Border>
                                                 <ControlTemplate.Triggers>
                                                     <Trigger Property="IsSelected" Value="True">
-                                                        <Setter TargetName="border" Property="Background" Value="{StaticResource cPurple}" />
+                                                        <Setter TargetName="border" Property="Background" Value="{StaticResource cSelectedMenuItem}" />
                                                     </Trigger>
                                                     <!-- Trigger to change the foreground color when IsMouseOver is true -->
                                                     <Trigger Property="IsMouseOver" Value="True">
-                                                        <Setter TargetName="border" Property="Background" Value="{StaticResource cPurple}" />
+                                                        <Setter TargetName="border" Property="Background" Value="{StaticResource cSelectedMenuItem}" />
                                                     </Trigger>
                                                 </ControlTemplate.Triggers>
                                             </ControlTemplate>

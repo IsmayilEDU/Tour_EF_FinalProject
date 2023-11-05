@@ -23,6 +23,9 @@ namespace Models.Classes.DeriverdClasses
         //  TourleaderId
         public int TourleaderId { get; set; }
 
+        //  IsActive
+        public bool IsActive { get; set; }
+
         #endregion
 
         #region Navigation properties

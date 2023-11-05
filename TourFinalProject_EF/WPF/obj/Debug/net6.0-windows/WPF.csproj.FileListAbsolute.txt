@@ -27,3 +27,5 @@ C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\Tour
 C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\WPF\obj\Debug\net6.0-windows\ref\WPF.dll
 C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\WPF\obj\Debug\net6.0-windows\Views\StartViews\RegisterView.g.cs
 C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\WPF\obj\Debug\net6.0-windows\Views\StartViews\RegisterView.baml
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\WPF\obj\Debug\net6.0-windows\Views\TouristViews\TouristView.g.cs
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\WPF\obj\Debug\net6.0-windows\Views\TouristViews\TouristView.baml

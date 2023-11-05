@@ -12,4 +12,10 @@
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\AdminViewModels\" />
+    <Folder Include="ViewModels\TouristViewModels\" />
+    <Folder Include="Views\AdminViews\" />
+  </ItemGroup>
+
 </Project>

@@ -27,6 +27,9 @@ namespace Database.Configurations
 
             //  Tourleader
             builder.Property(tour => tour.TourleaderId).HasColumnName("TourleaderId").HasColumnType("int").IsRequired();
+
+            //  IsActive
+            builder.Property(tour => tour.IsActive).HasColumnName("IsActive").HasColumnType("bit").IsRequired();
             #endregion
 
             #region Relations with other tables

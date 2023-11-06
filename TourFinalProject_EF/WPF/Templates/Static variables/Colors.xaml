@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="cMenuBackground" Color="#7163BA"/>
+    <SolidColorBrush x:Key="cBackground" Color="#CFD6E3"/>
+    <SolidColorBrush x:Key="cSelectedMenuItem" Color="#594F7C"/>
+    <SolidColorBrush x:Key="cWhite" Color="#FFFFFF"/>
+</ResourceDictionary>

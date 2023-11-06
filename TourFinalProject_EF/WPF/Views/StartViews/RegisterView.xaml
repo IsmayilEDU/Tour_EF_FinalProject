@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:WPF.Views.StartViews"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" Width="400" Height="750" Background="Transparent">
-    <Border CornerRadius="30" Background="{StaticResource cGray}">
+    <Border CornerRadius="30" Background="{StaticResource cBackground}">
         <Grid>
             
             <!--#region Rows-->
@@ -30,18 +30,18 @@
             <!--#region Registration-->
             <StackPanel Grid.Row="1" Margin="20 10">
 
-                <!--Menu name-->
-                <Label Content="Registration" Foreground="{StaticResource MaterialDesignLightForeground}" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" />
 
                 <!--#region Name-->
+                <!--Menu name-->
+                <Label Content="Registration" Foreground="{StaticResource MaterialDesignLightForeground}" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" />
                 
                 <!--Label of textbox of Name-->
-                <Label Content="Name" Foreground="{StaticResource cPurple}" FontSize="20" FontWeight="Bold" />
+                <Label Content="Name" Foreground="{StaticResource cMenuBackground}" FontSize="20" FontWeight="Bold" />
 
                 <!--Textbox of Name-->
                 <TextBox
                         x:Name="textbox_Name" FontSize="20" Margin="0 0 0 40"
-                        Foreground="{StaticResource cPurple}"
+                        Foreground="{StaticResource cMenuBackground}"
                         materialDesign:HintAssist.HelperText="Helper text longer than error"
                         materialDesign:HintAssist.Hint="Name">
                 </TextBox>
@@ -51,12 +51,12 @@
                 <!--#region Surname-->
                 
                 <!--Label of textbox of Surname-->
-                <Label Content="Surname" Foreground="{StaticResource cPurple}" FontSize="20" FontWeight="Bold" />
+                <Label Content="Surname" Foreground="{StaticResource cMenuBackground}" FontSize="20" FontWeight="Bold" />
 
                 <!--Textbox of Surname-->
                 <TextBox
                         x:Name="textbox_Surname" FontSize="20" Margin="0 0 0 40"
-                        Foreground="{StaticResource cPurple}"
+                        Foreground="{StaticResource cMenuBackground}"
                         materialDesign:HintAssist.HelperText="Helper text longer than error"
                         materialDesign:HintAssist.Hint="Name">
                 </TextBox>
@@ -66,12 +66,12 @@
                 <!--#region Phone-->
                 
                 <!--Label of textbox of Phone-->
-                <Label Content="Phone" Foreground="{StaticResource cPurple}" FontSize="20" FontWeight="Bold" />
+                <Label Content="Phone" Foreground="{StaticResource cMenuBackground}" FontSize="20" FontWeight="Bold" />
 
                 <!--Textbox of Phone-->
                 <TextBox
                         x:Name="textbox_Phone" FontSize="20" Margin="0 0 0 40"
-                        Foreground="{StaticResource cPurple}"
+                        Foreground="{StaticResource cMenuBackground}"
                         materialDesign:HintAssist.HelperText="Helper text longer than error"
                         materialDesign:HintAssist.Hint="Name">
                 </TextBox>
@@ -81,12 +81,12 @@
                 <!--#region Username-->
 
                 <!--Label of textbox of Username-->
-                <Label Content="Username" Foreground="{StaticResource cPurple}" FontSize="20" FontWeight="Bold" />
+                <Label Content="Username" Foreground="{StaticResource cMenuBackground}" FontSize="20" FontWeight="Bold" />
 
                 <!--Textbox of Username-->
                 <TextBox
                         x:Name="textbox_Username" FontSize="20" Margin="0 0 0 40"
-                        Foreground="{StaticResource cPurple}"
+                        Foreground="{StaticResource cMenuBackground}"
                         materialDesign:HintAssist.HelperText="Helper text longer than error"
                         materialDesign:HintAssist.Hint="Name">
                 </TextBox>
@@ -95,9 +95,9 @@
                 
                 <!--#region Password-->
 
-                <Label Content="Password" Foreground="{StaticResource cPurple}" FontSize="20" FontWeight="Bold" />
+                <Label Content="Password" Foreground="{StaticResource cMenuBackground}" FontSize="20" FontWeight="Bold" />
                 <PasswordBox
-                    BorderBrush="{StaticResource cPurple}"
+                    BorderBrush="{StaticResource cMenuBackground}"
                     VerticalAlignment="Top"
                     materialDesign:HintAssist.Hint="Password"
                     IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedPasswordBoxEnabledComboBox}"

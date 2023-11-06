@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database", "Database\Database.csproj", "{A4E924E2-4273-45ED-96FD-EF17A929DF5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF", "WPF\WPF.csproj", "{16A91B38-5746-4BFB-A25D-5A679F8A2F69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF", "WPF\WPF.csproj", "{16A91B38-5746-4BFB-A25D-5A679F8A2F69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

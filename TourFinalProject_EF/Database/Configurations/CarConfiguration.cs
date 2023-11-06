@@ -34,13 +34,12 @@ namespace Database.Configurations
             //  Count of seats
             builder.Property(car => car.SeatCount).HasColumnName("SeatCount").HasColumnType("int").IsRequired();
 
-            //  DriverId
-            builder.Property(car => car.DriverId).HasColumnName("DriverId").HasColumnType("int").IsRequired();
+
 
             #endregion
 
             #region Relations with other tables
-            builder.HasOne(car => car.Driver).WithOne(driver => driver.Car);
+            builder.HasOne(car => car.Driver).WithOne(driver => driver.Car).HasForeignKey<Driver>(driver => driver.CarId);
             #endregion
 
         }

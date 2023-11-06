@@ -31,7 +31,7 @@ namespace Database.Configurations
             #endregion
 
             #region Relations with other tables
-
+            
             #endregion
 
         }

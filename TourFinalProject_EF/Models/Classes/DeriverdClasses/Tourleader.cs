@@ -19,7 +19,8 @@ namespace Models.Classes.DeriverdClasses
         #endregion
 
         #region Navigation properties
-        public ICollection<Tour> Tours { get; set; }
+        public virtual ICollection<Tour> Tours { get; set; }
+        public virtual BankCard bankCard { get; set; }
         #endregion
     }
 }

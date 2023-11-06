@@ -6,8 +6,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:WPF.Views.StartViews"
         mc:Ignorable="d"
+        
         WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" Width="400" Height="600" Background="Transparent">
-    <Border CornerRadius="30" Background="#F5F6FA">
+    <Border CornerRadius="10" Background="{StaticResource cBackground}">
         <Grid>
 
             <!--#region Rows-->
@@ -34,21 +35,21 @@
                 <Label Content="Sign in" Foreground="{StaticResource MaterialDesignLightForeground}" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" />
 
                 <!--Label of textbox of Username-->
-                <Label Content="Username" Foreground="{StaticResource cPurple}" FontSize="20" FontWeight="Bold" Margin="0 20"/>
+                <Label Content="Username" Foreground="{StaticResource cMenuBackground}" FontSize="20" FontWeight="Bold" Margin="0 20"/>
 
                 <!--Textbox of Username-->
                 <TextBox
                         x:Name="textbox_Username" FontSize="20"
-                        Foreground="{StaticResource cPurple}"
+                        Foreground="{StaticResource cMenuBackground}"
                         materialDesign:HintAssist.HelperText="Helper text longer than error"
                         materialDesign:HintAssist.Hint="Name">    
                 </TextBox>
 
 
                 <!--Label of textbox of password-->
-                <Label Content="Password" Foreground="{StaticResource cPurple}" FontSize="20" FontWeight="Bold" Margin="0 20"/>
+                <Label Content="Password" Foreground="{StaticResource cMenuBackground}" FontSize="20" FontWeight="Bold" Margin="0 20"/>
                 <PasswordBox
-                    BorderBrush="{StaticResource cPurple}"
+                    BorderBrush="{StaticResource cMenuBackground}"
                     VerticalAlignment="Top"
                     materialDesign:HintAssist.Hint="Password"
                     IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedPasswordBoxEnabledComboBox}"

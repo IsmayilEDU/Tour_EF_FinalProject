@@ -37,7 +37,7 @@ namespace Database.Configurations
             #endregion
 
             #region Relations with other tables
-
+            builder.HasOne(tourist => tourist.bankCard).WithOne(bankCard => bankCard.tourist).HasForeignKey<BankCard>(bankcard => bankcard.TouristId);
             #endregion
 
         }

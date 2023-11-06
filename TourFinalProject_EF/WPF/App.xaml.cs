@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
+using Database.Contexts;
 using System.Windows;
 
 namespace WPF
@@ -13,5 +13,9 @@ namespace WPF
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            TourDbContext tourDbContext= new TourDbContext();
+        }
     }
 }

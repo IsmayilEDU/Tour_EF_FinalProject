@@ -15,7 +15,11 @@
   <ItemGroup>
     <Folder Include="ViewModels\AdminViewModels\" />
     <Folder Include="ViewModels\TouristViewModels\" />
-    <Folder Include="Views\AdminViews\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Database\Database.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 
 </Project>

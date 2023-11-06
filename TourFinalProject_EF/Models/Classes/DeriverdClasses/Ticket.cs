@@ -14,14 +14,14 @@ namespace Models.Classes.DeriverdClasses
 
         public double Price { get; set; }
 
-        public int TourId { get; set; }
+        public int? TourId { get; set; }
 
-        public int TouristId { get; set; }
+        public int? TouristId { get; set; }
 
         #endregion
 
         #region Navigation properties
-        public virtual Tour Tour { get; set; }
+        public virtual Tour? Tour { get; set; }
         public virtual Tourist? Tourist { get; set; }
         #endregion
     }

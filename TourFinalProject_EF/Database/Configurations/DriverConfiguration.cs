@@ -30,14 +30,14 @@ namespace Database.Configurations
             builder.Property(driver => driver.Phone).HasColumnName("Phone").HasColumnType("nvarchar(20)").IsRequired();
 
             //  Category of license of driver
-            builder.Property(driver => driver.driverLicenseCategory).HasColumnName("driverLicenseCategory").HasColumnType("nvarchar(1)").IsRequired();
+            builder.Property(driver => driver.driverLicenseCategory).HasColumnName("driverLicenseCategory").HasColumnType("int").IsRequired();
 
             //  CarId
             builder.Property(driver => driver.CarId).HasColumnName("CarId").HasColumnType("int").IsRequired();
             #endregion
 
             #region Relations with other tables
-
+            builder.HasOne(driver => driver.Car).WithOne(car => car.Driver).HasForeignKey<Driver>(driver => driver.CarId);
             #endregion
 
         }

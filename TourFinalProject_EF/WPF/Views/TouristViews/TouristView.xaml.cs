@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPF.Views.StartViews;
 
 namespace WPF.Views.AdminViews.Windows
 {
@@ -20,16 +21,18 @@ namespace WPF.Views.AdminViews.Windows
     /// </summary>
     public partial class TouristView : Window
     {
-        public ObservableCollection<Person> Persons { get; set; }
         public TouristView()
         {
             InitializeComponent();
-            Persons = new ObservableCollection<Person>()
-            {
-                new Person() {Name = "Ismayil", Surname = "Kerimzade"},
-                new Person() {Name = "Huseyn", Surname = "Kerimov"},
-            };
-            DataContext= this;
+            DataContext = this;
+            ListOTours.SelectedIndex = 0;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoginView secondWindow = new();
+            secondWindow.Show(); // Show the second window
+            this.Close(); // Close the current window
         }
     }
 }

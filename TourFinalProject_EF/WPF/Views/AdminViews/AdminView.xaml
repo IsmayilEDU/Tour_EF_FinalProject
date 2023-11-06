@@ -1,0 +1,270 @@
+﻿<Window x:Class="WPF.Views.AdminViews.AdminView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WPF.Views.AdminViews"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" 
+        ResizeMode="NoResize" Width="1000" Height="500" Background="Transparent">
+    <Border CornerRadius="10" Background="{StaticResource cSelectedMenuItem}">
+        <Grid>
+            
+            <!--#region Rows-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--#endregion-->
+
+            <!--#region Title-->
+            <DockPanel >
+
+                <!--Icon-->
+                <materialDesign:PackIcon 
+                Kind="ShieldAccount"
+                Width="50"
+                Height="50"
+                Margin="20 0"/>
+
+                <!--Fullname of tourist-->
+                <TextBlock 
+                Text="Admin" 
+                VerticalAlignment="Center"
+                FontSize="20"/>
+
+                <!--Button of Exit-->
+
+                <Button 
+                        HorizontalAlignment="Right"  
+                      IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                      Style="{StaticResource MaterialDesignIconForegroundButton}"
+                      ToolTip="MaterialDesignIconForegroundButton">
+                    <materialDesign:PackIcon
+    Kind="ExitToApp"
+                    Width="40"
+                    Height="40" />
+                </Button>
+
+            </DockPanel>
+            <!--#endregion-->
+
+            <!--#region Database-->
+            <materialDesign:Card Background="{StaticResource cBackground}" Grid.Row="1">
+                <TabControl
+                Style="{StaticResource MaterialDesignFilledTabControl}"
+                TabStripPlacement="Top">
+                    
+                    <!--#region Tours-->
+                    <TabItem 
+                    Header="Tours">
+
+                        <ListView ItemsSource="{Binding Tours}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Id}"
+                                        Header="Id" />
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding StartTime}"
+                                        Header="StartTime" />
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding FinishTime}"
+                                        Header="FinishTime" />
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Tourleader.Name}"
+                                        Header="TourleaderName" Width="200" />
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding IsActive}"
+                                        Header="IsActive" />
+                                    
+                                    
+                                    <GridViewColumn Header="Cars" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox Width="130" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    
+                                    <GridViewColumn Header="Locations" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox Width="130" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    
+                                    <GridViewColumn Header="Tickets" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox Width="130" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </TabItem>
+                    <!--#endregion-->
+
+                    <!--#region Tourleaders-->
+                    <TabItem 
+                    Header="Tourleaders">
+                        <ListView ItemsSource="{Binding Tourleaders}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Id}"
+                                        Header="Id" Width="150"/>
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Name}"
+                                        Header="StartTime" Width="150"/>
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Surname}"
+                                        Header="FinishTime" Width="150" />
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Phone}"
+                                        Header="TourleaderName" Width="150" />
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding bankCard.Balance}"
+                                        Header="IsActive" Width="150"/>
+
+
+                                    <GridViewColumn Header="Cars" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox Width="250" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+
+                                    
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+
+                    </TabItem>
+                    <!--#endregion-->
+
+                    <!--#region Cars-->
+                    <TabItem 
+                    Header="Cars">
+
+                        <ListView ItemsSource="{Binding Cars}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Id}"
+                                        Header="Id" Width="100"/>
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Brand}"
+                                        Header="Brand" Width="150"/>
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Model}"
+                                        Header="Model" Width="150" />
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Year}"
+                                        Header="Year" Width="150" />
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding CarNumber}"
+                                        Header="CarNumber" Width="150"/>
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding SeatCount}"
+                                        Header="SeatCount" Width="150"/>
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Driver.Name}"
+                                        Header="DriverName" Width="150"/>
+                                    
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </TabItem>
+                    <!--#endregion-->
+                    
+                    <!--#region Drivers-->
+                    <TabItem 
+                    Header="Drivers">
+
+                        <ListView ItemsSource="{Binding Drivers}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Id}"
+                                        Header="Id" Width="200"/>
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Name}"
+                                        Header="Name" Width="200"/>
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Surname}"
+                                        Header="Surname" Width="200" />
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Phone}"
+                                        Header="Phone" Width="200" />
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Car.CarNumber}"
+                                        Header="CarNumber" Width="200"/>
+
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </TabItem>
+                    <!--#endregion-->
+
+                    <!--#region Locations-->
+                    <TabItem 
+                    Header="Locations">
+
+                        <ListView ItemsSource="{Binding Locations}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Id}"
+                                        Header="Id" Width="250"/>
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Name}"
+                                        Header="Name" Width="250"/>
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Longitude}"
+                                        Header="Surname" Width="250" />
+
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Latitude}"
+                                        Header="Phone" Width="250" />
+
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        
+                    </TabItem>
+                    <!--#endregion-->
+                    
+                </TabControl>
+            </materialDesign:Card>
+            <!--#endregion-->
+            
+        </Grid>
+    </Border>
+</Window>

@@ -22,7 +22,7 @@ namespace Models.Classes.DeriverdClasses
             set
             {
                 if (MyRegex.CheckLettersStartWithUppercase(value)) value = _brand;
-                else throw new Exception("Brand  is incorrect!");
+                else throw new Exception("Brand is incorrect!");
             }
         }
 
@@ -74,8 +74,6 @@ namespace Models.Classes.DeriverdClasses
             }
         }
 
-        //  DriverId
-        public int DriverId { get; set; }
 
         #endregion
 

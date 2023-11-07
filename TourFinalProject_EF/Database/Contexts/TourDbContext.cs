@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Models.Classes.DeriverdClasses;
+using Models.Entities.DerivedEntities;
 using System.Reflection;
 
 namespace Database.Contexts

@@ -60,34 +60,34 @@
                     <TabItem 
                     Header="Tours">
 
-                        <ListView ItemsSource="{Binding Tours}">
+                        <ListView ItemsSource="{Binding TourDTOs}">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Id}"
-                                        Header="Id" />
+                                        Header="Id" Width="80"/>
                                     
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding StartTime}"
-                                        Header="StartTime" />
+                                        Header="StartTime" Width="133"/>
                                     
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding FinishTime}"
-                                        Header="FinishTime" />
+                                        Header="FinishTime" Width="133"/>
                                     
                                     <GridViewColumn 
-                                        DisplayMemberBinding="{Binding Tourleader.Name}"
-                                        Header="TourleaderName" Width="200" />
+                                        DisplayMemberBinding="{Binding TourleaderName}"
+                                        Header="TourleaderName" Width="170" />
                                     
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding IsActive}"
-                                        Header="IsActive" />
+                                        Header="IsActive" Width="133"/>
                                     
                                     
                                     <GridViewColumn Header="Cars" >
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <ComboBox Width="130" />
+                                                <ComboBox Width="150" ItemsSource="{Binding NumbersOfCars}"/>
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
@@ -95,7 +95,7 @@
                                     <GridViewColumn Header="Locations" >
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <ComboBox Width="130" />
+                                                <ComboBox Width="133" ItemsSource="{Binding NamesOfLocations}"/>
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
@@ -103,7 +103,7 @@
                                     <GridViewColumn Header="Tickets" >
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <ComboBox Width="130" />
+                                                <ComboBox Width="80" ItemsSource="{Binding IDsOfTickets}"/>
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
@@ -117,37 +117,28 @@
                     <!--#region Tourleaders-->
                     <TabItem 
                     Header="Tourleaders">
-                        <ListView ItemsSource="{Binding Tourleaders}">
+                        <ListView ItemsSource="{Binding TourleaderDTOs}">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Id}"
-                                        Header="Id" Width="150"/>
+                                        Header="Id" Width="200"/>
 
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Name}"
-                                        Header="StartTime" Width="150"/>
+                                        Header="Name" Width="200"/>
 
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Surname}"
-                                        Header="FinishTime" Width="150" />
+                                        Header="Surname" Width="200" />
 
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Phone}"
-                                        Header="TourleaderName" Width="150" />
+                                        Header="Phone" Width="200" />
 
                                     <GridViewColumn 
-                                        DisplayMemberBinding="{Binding bankCard.Balance}"
-                                        Header="IsActive" Width="150"/>
-
-
-                                    <GridViewColumn Header="Cars" >
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <ComboBox Width="250" />
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
+                                        DisplayMemberBinding="{Binding BalanceOfBankcard}"
+                                        Header="BalanceOfBankcard" Width="200"/>
 
                                     
                                 </GridView>
@@ -161,7 +152,7 @@
                     <TabItem 
                     Header="Cars">
 
-                        <ListView ItemsSource="{Binding Cars}">
+                        <ListView ItemsSource="{Binding CarDTOs}">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn 
@@ -189,7 +180,7 @@
                                         Header="SeatCount" Width="150"/>
                                     
                                     <GridViewColumn 
-                                        DisplayMemberBinding="{Binding Driver.Name}"
+                                        DisplayMemberBinding="{Binding DriverName}"
                                         Header="DriverName" Width="150"/>
                                     
                                 </GridView>
@@ -202,27 +193,33 @@
                     <TabItem 
                     Header="Drivers">
 
-                        <ListView ItemsSource="{Binding Drivers}">
+                        <ListView ItemsSource="{Binding DriverDTOs}">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Id}"
-                                        Header="Id" Width="200"/>
+                                        Header="Id" Width="100"/>
 
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Name}"
-                                        Header="Name" Width="200"/>
+                                        Header="Name" Width="150"/>
 
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Surname}"
-                                        Header="Surname" Width="200" />
+                                        Header="Surname" Width="150" />
 
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Phone}"
                                         Header="Phone" Width="200" />
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding driverLicenseCategory}"
+                                        Header="DriverLicenseCategory" Width="200" />
+                                    
+                                    
 
                                     <GridViewColumn 
-                                        DisplayMemberBinding="{Binding Car.CarNumber}"
+                                        DisplayMemberBinding="{Binding CarNumber}"
                                         Header="CarNumber" Width="200"/>
 
                                 </GridView>
@@ -235,7 +232,7 @@
                     <TabItem 
                     Header="Locations">
 
-                        <ListView ItemsSource="{Binding Locations}">
+                        <ListView ItemsSource="{Binding LocationDTOs}">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn 
@@ -248,11 +245,11 @@
 
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Longitude}"
-                                        Header="Surname" Width="250" />
+                                        Header="Longitude" Width="250" />
 
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Latitude}"
-                                        Header="Phone" Width="250" />
+                                        Header="Latitude" Width="250" />
 
                                 </GridView>
                             </ListView.View>

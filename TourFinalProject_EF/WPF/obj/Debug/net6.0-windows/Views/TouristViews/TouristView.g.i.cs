@@ -80,7 +80,7 @@ namespace WPF.Views.AdminViews.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPF;component/views/touristviews/touristview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPF;V1.0.0.0;component/views/touristviews/touristview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\TouristViews\TouristView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

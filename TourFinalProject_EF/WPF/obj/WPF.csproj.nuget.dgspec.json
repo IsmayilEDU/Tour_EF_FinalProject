@@ -188,6 +188,10 @@
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[4.9.0, )"
+            },
+            "MvvmLightLibs": {
+              "target": "Package",
+              "version": "[5.4.1.1, )"
             }
           },
           "imports": [

@@ -1,9 +1,18 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using Database.Contexts;
+using GalaSoft.MvvmLight.Command;
 using Microsoft.Extensions.Configuration;
-
+using Models.Entities.DerivedEntities;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
 using WPF.Views.AdminViews;
+using WPF.Views.AdminViews.Windows;
 using WPF.Views.StartViews;
+using System;
+using System.Windows;
+{
+
+}
 
 namespace WPF.ViewModels.StartViewModels
 {
@@ -15,6 +24,7 @@ namespace WPF.ViewModels.StartViewModels
         private readonly PasswordBox _passwordBox_Password;
         private readonly RadioButton _radiobutton_Admin;
         private readonly RadioButton _radiobutton_Tourist;
+        public TourDbContext DbContext { get; set; }
         #endregion
 
         #region Commands
@@ -25,24 +35,48 @@ namespace WPF.ViewModels.StartViewModels
         #region Command functions
         private void SignIn()
         {
-            //  If user want to sign in like admin
-            
-            if (_radiobutton_Admin.IsChecked == true && CheckAdmin(in _textbox_Username, in _passwordBox_Password))
+            try
             {
-                new AdminView().Show();
-                _thisView.Close();
+                //  If user want to sign in like admin
+
+                if (_radiobutton_Admin.IsChecked == true)
+                {
+                    if (CheckAdmin(in _textbox_Username, in _passwordBox_Password))
+                    {
+                        new AdminView().Show();
+                        _thisView.Close();
+                    }
+                    else
+                    {
+                        throw new Exception("Username or password of admin incorrect!");
+                    }
+                }
+
+                //  If user want to sign in like tourist
+                else if (_radiobutton_Tourist.IsChecked == true)
+                {
+
+                    Tourist SelectedTourist;
+                    List<Tourist> tourists = DbContext.Tourists.ToList();
+                    foreach (var tourist in tourists)
+                    {
+
+                    }
+
+                    new TouristView().Show();
+                    _thisView.Close();
+                }
             }
-
-            //  If user want to sign in like tourist
-            else if (_radiobutton_Tourist.IsChecked == true)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void Register()
         {
-
+            new RegisterView().Show();
+            _thisView.Close();
         }
         #endregion
 
@@ -53,6 +87,7 @@ namespace WPF.ViewModels.StartViewModels
                                             &&
                                             _passwordBox_Password.Password == MyConfigurations.MyConfigurations.PasswordOfAdmin;
         }
+
         #endregion
 
         #region Constructor
@@ -70,6 +105,7 @@ namespace WPF.ViewModels.StartViewModels
             _passwordBox_Password= passwordBox_Password;
             _radiobutton_Admin = radiobutton_Admin;
             _radiobutton_Tourist= radiobutton_Tourist;
+            DbContext = new();
         }
         #endregion
 

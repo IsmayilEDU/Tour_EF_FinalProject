@@ -10,6 +10,9 @@
     <Compile Update="Views\AdminViews\AdminView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\StartViews\RegisterView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\TouristViews\BuyTicketView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -17,9 +20,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\StartViews\LoginView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\StartViews\RegisterView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -30,6 +30,9 @@
     <Page Update="Views\AdminViews\AdminView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\StartViews\RegisterView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\TouristViews\BuyTicketView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -37,9 +40,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\StartViews\LoginView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\StartViews\RegisterView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

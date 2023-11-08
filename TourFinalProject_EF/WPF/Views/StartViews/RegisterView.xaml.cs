@@ -11,17 +11,32 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPF.ViewModels.StartViewModels;
 
 namespace WPF.Views.StartViews
 {
     /// <summary>
-    /// Interaction logic for Register.xaml
+    /// Interaction logic for RegisterView.xaml
     /// </summary>
-    public partial class Register : Window
+    public partial class RegisterView : Window
     {
-        public Register()
+        public RegisterView()
         {
             InitializeComponent();
+            DataContext = new RegisterViewModel
+                (
+                this,
+                ref textbox_Name,
+                ref textbox_Surname,
+                ref textbox_Phone,
+                ref textbox_Username,
+                ref passwordBox_Password,
+                ref textbox_BankName,
+                ref textbox_CardNumber,
+                ref datePicker_ExpirationDate,
+                ref textbox_CVC,
+                ref textbox_Balance
+                );
         }
     }
 }

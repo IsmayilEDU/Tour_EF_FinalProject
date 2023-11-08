@@ -14,7 +14,6 @@ namespace Models.Entities.DerivedEntities
 
         #region Navigation properties
         public virtual ICollection<Tour> Tours { get; set; }
-        public virtual BankCard bankCard { get; set; }
         #endregion
     }
 }

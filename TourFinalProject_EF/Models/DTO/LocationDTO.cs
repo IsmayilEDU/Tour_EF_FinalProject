@@ -15,5 +15,7 @@ namespace Models.DTO
         public double Longitude { get; set; }
 
         public double Latitude { get; set; }
+
+        public List<int> IDsOfTours { get; set; }
     }
 }

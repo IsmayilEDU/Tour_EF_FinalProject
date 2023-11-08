@@ -114,6 +114,51 @@
                     </TabItem>
                     <!--#endregion-->
 
+                    <!--#region Tourists-->
+                    <TabItem 
+                    Header="Tourists">
+
+                        <ListView ItemsSource="{Binding TouristDTOs}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Id}"
+                                        Header="Id" Width="80"/>
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Username}"
+                                        Header="Username" Width="150"/>
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Password}"
+                                        Header="Password" Width="150"/>
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Name}"
+                                        Header="Name" Width="150" />
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Surname}"
+                                        Header="Surname" Width="150"/>
+                                    
+                                    <GridViewColumn 
+                                        DisplayMemberBinding="{Binding Phone}"
+                                        Header="Phone" Width="150"/>
+                                    
+                                    <GridViewColumn Header="Tickets" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox Width="80" ItemsSource="{Binding IDsOfTickets}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </TabItem>
+                    <!--#endregion-->
+
                     <!--#region Tourleaders-->
                     <TabItem 
                     Header="Tourleaders">
@@ -136,11 +181,14 @@
                                         DisplayMemberBinding="{Binding Phone}"
                                         Header="Phone" Width="200" />
 
-                                    <GridViewColumn 
-                                        DisplayMemberBinding="{Binding BalanceOfBankcard}"
-                                        Header="BalanceOfBankcard" Width="200"/>
+                                    <GridViewColumn Header="IDsOfTours" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox Width="200" ItemsSource="{Binding IDsOfTours}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
 
-                                    
                                 </GridView>
                             </ListView.View>
                         </ListView>
@@ -216,8 +264,6 @@
                                         DisplayMemberBinding="{Binding driverLicenseCategory}"
                                         Header="DriverLicenseCategory" Width="200" />
                                     
-                                    
-
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding CarNumber}"
                                         Header="CarNumber" Width="200"/>
@@ -237,19 +283,27 @@
                                 <GridView>
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Id}"
-                                        Header="Id" Width="250"/>
+                                        Header="Id" Width="200"/>
 
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Name}"
-                                        Header="Name" Width="250"/>
+                                        Header="Name" Width="200"/>
 
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Longitude}"
-                                        Header="Longitude" Width="250" />
+                                        Header="Longitude" Width="200" />
 
                                     <GridViewColumn 
                                         DisplayMemberBinding="{Binding Latitude}"
-                                        Header="Latitude" Width="250" />
+                                        Header="Latitude" Width="200" />
+
+                                    <GridViewColumn Header="IDsOfTours" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox Width="200" ItemsSource="{Binding IDsOfTours}"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
 
                                 </GridView>
                             </ListView.View>

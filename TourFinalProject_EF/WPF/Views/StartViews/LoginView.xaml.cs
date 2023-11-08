@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPF.ViewModels.StartViewModels;
 
 namespace WPF.Views.StartViews
 {
@@ -23,25 +24,14 @@ namespace WPF.Views.StartViews
         public LoginView()
         {
             InitializeComponent();
+            DataContext = new LoginViewModel(this, ref textbox_Username, ref passwordBox_Password, ref radiobutton_Admin, ref radiobutton_Tourist);
         }
-
-        
 
         private void button_Exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-
     }
 
-    public class NotEmptyValidationRule : ValidationRule
-    {
-        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
-        {
-            return string.IsNullOrWhiteSpace((value ?? "").ToString())
-                ? new ValidationResult(false, "Field is required.")
-                : ValidationResult.ValidResult;
-        }
-    }
 }

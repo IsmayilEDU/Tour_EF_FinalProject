@@ -1,0 +1,13 @@
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\bin\Debug\net6.0\Configurations.deps.json
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\bin\Debug\net6.0\Configurations.dll
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\bin\Debug\net6.0\Configurations.pdb
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\obj\Debug\net6.0\Configurations.csproj.AssemblyReference.cache
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\obj\Debug\net6.0\Configurations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\obj\Debug\net6.0\Configurations.AssemblyInfoInputs.cache
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\obj\Debug\net6.0\Configurations.AssemblyInfo.cs
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\obj\Debug\net6.0\Configurations.csproj.CoreCompileInputs.cache
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\obj\Debug\net6.0\Configurations.dll
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\obj\Debug\net6.0\refint\Configurations.dll
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\obj\Debug\net6.0\Configurations.pdb
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\obj\Debug\net6.0\ref\Configurations.dll
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\Configurations\bin\Debug\net6.0\appsettings.json

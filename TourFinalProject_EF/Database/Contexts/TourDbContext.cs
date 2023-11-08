@@ -10,10 +10,11 @@ namespace Database.Contexts
         {
             optionsBuilder
                 .UseLazyLoadingProxies()
-                .UseSqlServer("Data Source=DESKTOP-0V84BDI\\SQLEXPRESS;Database=Tour;Integrated Security=True;Connect Timeout=30;Encrypt=False;");
+                .UseSqlServer(MyConfigurations.MyConfigurations.ConnectionString);
 
             base.OnConfiguring(optionsBuilder);
         }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

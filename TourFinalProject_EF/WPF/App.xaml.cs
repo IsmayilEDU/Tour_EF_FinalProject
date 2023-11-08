@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using Database.Contexts;
 using System.Windows;
+using Microsoft.Extensions.Configuration;
 
 namespace WPF
 {
@@ -15,7 +16,8 @@ namespace WPF
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            TourDbContext tourDbContext= new TourDbContext();
+            //TourDbContext tourDbContext= new TourDbContext();
+            
         }
     }
 }

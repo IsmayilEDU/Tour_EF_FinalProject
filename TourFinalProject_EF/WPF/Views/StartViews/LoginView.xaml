@@ -49,6 +49,7 @@
                 <!--Label of textbox of password-->
                 <Label Content="Password" Foreground="{StaticResource cMenuBackground}" FontSize="20" FontWeight="Bold" Margin="0 20"/>
                 <PasswordBox
+                    x:Name="passwordBox_Password"
                     BorderBrush="{StaticResource cMenuBackground}"
                     VerticalAlignment="Top"
                     materialDesign:HintAssist.Hint="Password"
@@ -58,16 +59,17 @@
                 <!--Radionbuttons-->
                 <StackPanel Orientation="Horizontal" Margin="110 20 80 20">
                     <RadioButton
+                        x:Name="radiobutton_Admin"
                           Content="Admin"
                           GroupName="GroupChoiceChip"
                           IsChecked="True"
                           Style="{StaticResource MaterialDesignChoiceChipPrimaryRadioButton}" />
                     
                     <RadioButton
+                        x:Name="radiobutton_Tourist"
                           Content="Tourist"
                           GroupName="GroupChoiceChip"
                           Style="{StaticResource MaterialDesignChoiceChipPrimaryRadioButton}" />
-                    
                     
                 </StackPanel>
 
@@ -78,7 +80,8 @@
                         materialDesign:ButtonAssist.CornerRadius="10"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                         Style="{StaticResource MaterialDesignRaisedButton}"
-                        ToolTip="MaterialDesignRaisedButton with Round Corners">
+                        ToolTip="MaterialDesignRaisedButton with Round Corners"
+                        Command="{Binding SignIn_Command}">
                         <TextBlock Text="Sign in" />
                     </Button>
                 </Grid>
@@ -92,7 +95,8 @@
                       Content="Register"
                       IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                       Style="{StaticResource MaterialDesignFlatDarkButton}"
-                      ToolTip="MaterialDesignFlatButton" />
+                      ToolTip="MaterialDesignFlatButton"
+                    Command="{Binding Register_Command}"/>
             </StackPanel>
             <!--#endregion-->
         </Grid>

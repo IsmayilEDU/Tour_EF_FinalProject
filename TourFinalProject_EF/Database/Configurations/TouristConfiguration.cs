@@ -40,6 +40,19 @@ namespace Database.Configurations
             builder.HasOne(tourist => tourist.bankCard).WithOne(bankCard => bankCard.tourist).HasForeignKey<BankCard>(bankcard => bankcard.TouristId);
             #endregion
 
+            #region Datas
+            builder.HasData
+                (
+                new Tourist()
+                {
+                    Username = "ismayil123", Password = "ismayil123", Name = "Ismayil", Surname = "Kerimzade", Phone = "010-210-00-10"
+                },
+                new Tourist()
+                {
+                    Username = "cavid123", Password = "cavid123", Name = "Cavid", Surname = "Atamoghlanov", Phone = "055-555-55-55"
+                }
+                );
+            #endregion
         }
     }
 }

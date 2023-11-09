@@ -31,6 +31,22 @@ namespace Database.Configurations
             builder.HasOne(tourLocation => tourLocation.Tour).WithMany(tour => tour.TourLocations).HasForeignKey(tourLocation => tourLocation.TourId);
             builder.HasOne(tourLocation => tourLocation.Location).WithMany(tour => tour.TourLocations).HasForeignKey(tourLocation => tourLocation.LocationId);
             #endregion
+
+            #region Datas
+            builder.HasData
+                (
+                new TourLocation() { TourId = 1, LocationId = 1},
+                new TourLocation() { TourId = 1, LocationId = 2},
+                new TourLocation() { TourId = 1, LocationId = 3},
+                new TourLocation() { TourId = 1, LocationId = 4},
+                new TourLocation() { TourId = 1, LocationId = 5},
+                new TourLocation() { TourId = 2, LocationId = 6},
+                new TourLocation() { TourId = 2, LocationId = 7},
+                new TourLocation() { TourId = 2, LocationId = 8},
+                new TourLocation() { TourId = 2, LocationId = 9},
+                new TourLocation() { TourId = 2, LocationId = 10}
+                );
+            #endregion
         }
     }
 }

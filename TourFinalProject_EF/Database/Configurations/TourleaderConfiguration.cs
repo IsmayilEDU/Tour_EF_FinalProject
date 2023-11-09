@@ -31,7 +31,15 @@ namespace Database.Configurations
             #endregion
 
             #region Relations with other tables
-            
+
+            #endregion
+
+            #region Datas
+            builder.HasData
+                (
+                new Tourleader() { Name = "Senan", Surname = "Kerimov", Phone = "099-777-77-77"},
+                new Tourleader() { Name = "Ilkin", Surname = "Aslanov", Phone = "099-444-44-44"}
+                );
             #endregion
 
         }

@@ -1,5 +1,6 @@
 ﻿using Database.Contexts;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.EntityFrameworkCore;
 using Models.DTO;
 using Models.Entities.DerivedEntities;
 using System;
@@ -10,7 +11,7 @@ using WpfApp.Views.StartViews;
 
 namespace WpfApp.ViewModels.AdminViewModels
 {
-    class AdminViewModel
+    internal class AdminViewModel : ITourDBContext
     {
 
         #region Fields
@@ -21,6 +22,7 @@ namespace WpfApp.ViewModels.AdminViewModels
         public List<CarDTO> CarDTOs { get; set; }
         public List<DriverDTO> DriverDTOs { get; set; }
         public List<LocationDTO> LocationDTOs { get; set; }
+        public TourDbContext DbContext { get ; set ; }
 
         #endregion
 
@@ -39,18 +41,18 @@ namespace WpfApp.ViewModels.AdminViewModels
         #endregion
 
         #region DB_Functions
-        private List<TourDTO> TourDTOFromDB(ref TourDbContext tourDb)
+        private List<TourDTO> TourDTOFromDB()
         {
 
             List<TourDTO> tourDTOs = new();
-            List<Tour> tours = tourDb.Tours.ToList();
+            List<Tour> tours = DbContext.Tours.ToList();
             foreach (var tour in tours)
             {
 
                 #region Find tourleader name with inner join
 
-                var tourleaderName = (from Tour in tourDb.Tours
-                                      join Tourleader in tourDb.Tourleaders on Tour.TourleaderId equals Tourleader.Id
+                var tourleaderName = (from Tour in DbContext.Tours
+                                      join Tourleader in DbContext.Tourleaders on Tour.TourleaderId equals Tourleader.Id
                                       where Tour.Id == tour.Id
                                       select Tourleader.Name).FirstOrDefault();
 
@@ -58,9 +60,9 @@ namespace WpfApp.ViewModels.AdminViewModels
 
                 #region Add number of car which relation tour
 
-                var numbersOfCars = (from Tour in tourDb.Tours
-                                     join carTour in tourDb.CarTours on Tour.Id equals carTour.TourId
-                                     join car in tourDb.Cars on carTour.CarId equals car.Id
+                var numbersOfCars = (from Tour in DbContext.Tours
+                                     join carTour in DbContext.CarTours on Tour.Id equals carTour.TourId
+                                     join car in DbContext.Cars on carTour.CarId equals car.Id
                                      where Tour.Id == tour.Id
                                      select car.CarNumber).ToList();
 
@@ -68,9 +70,9 @@ namespace WpfApp.ViewModels.AdminViewModels
 
                 #region Add name of location which relation tour
 
-                var namesOfLocations = (from Tour in tourDb.Tours
-                                        join tourLocation in tourDb.TourLocations on Tour.Id equals tourLocation.TourId
-                                        join location in tourDb.Locations on tourLocation.LocationId equals location.Id
+                var namesOfLocations = (from Tour in DbContext.Tours
+                                        join tourLocation in DbContext.TourLocations on Tour.Id equals tourLocation.TourId
+                                        join location in DbContext.Locations on tourLocation.LocationId equals location.Id
                                         where Tour.Id == tour.Id
                                         select location.Name).ToList();
 
@@ -78,8 +80,8 @@ namespace WpfApp.ViewModels.AdminViewModels
 
                 #region IDs of tckets which relation with tour
 
-                var iDsOfTickets = (from Tour in tourDb.Tours
-                                    join ticket in tourDb.Tickets on Tour.Id equals ticket.TourId
+                var iDsOfTickets = (from Tour in DbContext.Tours
+                                    join ticket in DbContext.Tickets on Tour.Id equals ticket.TourId
                                     where Tour.Id == tour.Id
                                     select ticket.Id).ToList();
                 #endregion
@@ -89,8 +91,8 @@ namespace WpfApp.ViewModels.AdminViewModels
                 var tourDTO = new TourDTO
                 {
                     Id = tour.Id,
-                    StartTime = DateOnly.FromDateTime(tour.StartTime),
-                    FinishTime = DateOnly.FromDateTime(tour.FinishTime),
+                    StartTime = tour.StartTime,
+                    FinishTime =tour.FinishTime,
                     TourleaderName = tourleaderName!,
                     IsActive = tour.IsActive,
                     NumbersOfCars = numbersOfCars,
@@ -105,18 +107,18 @@ namespace WpfApp.ViewModels.AdminViewModels
             return tourDTOs;
         }
 
-        private List<TouristDTO> TouristDTOFromDB(ref TourDbContext tourDb)
+        private List<TouristDTO> TouristDTOFromDB()
         {
 
             List<TouristDTO> touristDTOs = new();
-            List<Tourist> tourists = tourDb.Tourists.ToList();
+            List<Tourist> tourists = DbContext.Tourists.ToList();
             foreach (var tourist in tourists)
             {
 
                 #region Find balance of bankcard whiceh relation with tourist
 
-                var balanceOfBankcard = (from Tourist in tourDb.Tourists
-                                         join Bankcard in tourDb.BankCards on Tourist.Id equals Bankcard.TouristId
+                var balanceOfBankcard = (from Tourist in DbContext.Tourists
+                                         join Bankcard in DbContext.BankCards on Tourist.Id equals Bankcard.TouristId
                                          where Tourist.Id == tourist.Id
                                          select Bankcard.Balance).FirstOrDefault();
 
@@ -124,8 +126,8 @@ namespace WpfApp.ViewModels.AdminViewModels
 
                 #region IDs of tickets which relation with tourist
 
-                var iDsOfTickets = (from Tourist in tourDb.Tourists
-                                    join ticket in tourDb.Tickets on Tourist.Id equals ticket.TouristId
+                var iDsOfTickets = (from Tourist in DbContext.Tourists
+                                    join ticket in DbContext.Tickets on Tourist.Id equals ticket.TouristId
                                     where Tourist.Id == tourist.Id
                                     select ticket.Id).ToList();
                 #endregion
@@ -151,15 +153,15 @@ namespace WpfApp.ViewModels.AdminViewModels
             return touristDTOs;
         }
 
-        private List<TourleaderDTO> TourleaderDTOFromDB(ref TourDbContext tourDb)
+        private List<TourleaderDTO> TourleaderDTOFromDB()
         {
             List<TourleaderDTO> tourleaderDTOs = new();
-            List<Tourleader> tourleaders = tourDb.Tourleaders.ToList();
+            List<Tourleader> tourleaders = DbContext.Tourleaders.ToList();
 
             foreach (var tourleader in tourleaders)
             {
-                var iDsOfTours = (from Tourleader in tourDb.Tourleaders
-                                  join Tour in tourDb.Tours on tourleader.Id equals Tour.TourleaderId
+                var iDsOfTours = (from Tourleader in DbContext.Tourleaders
+                                  join Tour in DbContext.Tours on tourleader.Id equals Tour.TourleaderId
                                   where Tourleader.Id == tourleader.Id
                                   select Tourleader.Id).ToList();
 
@@ -176,15 +178,15 @@ namespace WpfApp.ViewModels.AdminViewModels
             return tourleaderDTOs;
         }
 
-        private List<CarDTO> CarDTOFromDB(ref TourDbContext tourDb)
+        private List<CarDTO> CarDTOFromDB()
         {
             List<CarDTO> carDTOs = new();
-            List<Car> cars = tourDb.Cars.ToList();
+            List<Car> cars = DbContext.Cars.ToList();
 
             foreach (var car in cars)
             {
-                var driverName = (from Car in tourDb.Cars
-                                  join Driver in tourDb.Drivers on Car.Id equals Driver.CarId
+                var driverName = (from Car in DbContext.Cars
+                                  join Driver in DbContext.Drivers on Car.Id equals Driver.CarId
                                   where car.Id == Car.Id
                                   select Driver.Name).FirstOrDefault();
 
@@ -202,15 +204,15 @@ namespace WpfApp.ViewModels.AdminViewModels
             return carDTOs;
         }
 
-        private List<DriverDTO> DriverDTOFromDB(ref TourDbContext tourDb)
+        private List<DriverDTO> DriverDTOFromDB()
         {
             List<DriverDTO> driverDTOs = new();
-            List<Driver> drivers = tourDb.Drivers.ToList();
+            List<Driver> drivers = DbContext.Drivers.ToList();
 
             foreach (var driver in drivers)
             {
-                var carNumber = (from Car in tourDb.Cars
-                                 join Driver in tourDb.Drivers on Car.Id equals Driver.CarId
+                var carNumber = (from Car in DbContext.Cars
+                                 join Driver in DbContext.Drivers on Car.Id equals Driver.CarId
                                  where driver.Id == Driver.Id
                                  select Car.CarNumber).FirstOrDefault();
 
@@ -228,16 +230,16 @@ namespace WpfApp.ViewModels.AdminViewModels
             return driverDTOs;
         }
 
-        private List<LocationDTO> LocationDTOFromDB(ref TourDbContext tourDb)
+        private List<LocationDTO> LocationDTOFromDB()
         {
             List<LocationDTO> locationDTOs = new();
-            List<Location> locations = tourDb.Locations.ToList();
+            List<Location> locations = DbContext.Locations.ToList();
 
             foreach (var location in locations)
             {
-                var iDsOfTours = (from Tour in tourDb.Tours
-                                  join tourLocation in tourDb.TourLocations on Tour.Id equals tourLocation.TourId
-                                  join Location in tourDb.Locations on tourLocation.LocationId equals Location.Id
+                var iDsOfTours = (from Tour in DbContext.Tours
+                                  join tourLocation in DbContext.TourLocations on Tour.Id equals tourLocation.TourId
+                                  join Location in DbContext.Locations on tourLocation.LocationId equals Location.Id
                                   where location.Id == Location.Id
                                   select Tour.Id).ToList();
 
@@ -263,12 +265,13 @@ namespace WpfApp.ViewModels.AdminViewModels
         {
             Exit_Command = new RelayCommand(exit);
             _thisView= thisView;
-            TourDTOs = TourDTOFromDB(ref tourDb);
-            TouristDTOs = TouristDTOFromDB(ref tourDb);
-            TourleaderDTOs = TourleaderDTOFromDB(ref tourDb);
-            CarDTOs = CarDTOFromDB(ref tourDb);
-            DriverDTOs = DriverDTOFromDB(ref tourDb);
-            LocationDTOs = LocationDTOFromDB(ref tourDb);
+            DbContext = tourDb;
+            TourDTOs = TourDTOFromDB();
+            TouristDTOs = TouristDTOFromDB();
+            TourleaderDTOs = TourleaderDTOFromDB();
+            CarDTOs = CarDTOFromDB();
+            DriverDTOs = DriverDTOFromDB();
+            LocationDTOs = LocationDTOFromDB();
         }
         #endregion
 

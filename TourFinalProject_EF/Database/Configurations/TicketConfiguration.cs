@@ -35,6 +35,22 @@ namespace Database.Configurations
             builder.HasOne(ticket => ticket.Tourist).WithMany(tourist => tourist.Tickets).HasForeignKey(ticket => ticket.TouristId);
             #endregion
 
+            #region Datas
+            builder.HasData
+                (
+                new Ticket() { TourId = 1},
+                new Ticket() { TourId = 1},
+                new Ticket() { TourId = 1},
+                new Ticket() { TourId = 1},
+                new Ticket() { TourId = 1},
+                new Ticket() { TourId = 2},
+                new Ticket() { TourId = 2},
+                new Ticket() { TourId = 2},
+                new Ticket() { TourId = 2},
+                new Ticket() { TourId = 2}
+                );
+            #endregion
+
         }
     }
 }

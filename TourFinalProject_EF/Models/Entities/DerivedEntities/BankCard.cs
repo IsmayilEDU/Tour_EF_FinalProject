@@ -48,13 +48,13 @@ namespace Models.Entities.DerivedEntities
         }
 
         //  ExpirationDate of card
-        private DateTime _ExpirationDate;
-        public DateTime ExpirationDate
+        private DateOnly _ExpirationDate;
+        public DateOnly ExpirationDate
         {
             get { return _ExpirationDate; }
             init
             {
-                if (value > DateTime.Now)
+                if (value > DateOnly.FromDateTime(DateTime.Now))
                 {
                     _ExpirationDate = value;
                 }

@@ -15,10 +15,10 @@ namespace Models.Entities.DerivedEntities
         public int Id { get; init; }
 
         //  StartTime
-        public DateTime StartTime { get; set; }
+        public DateOnly StartTime { get; set; }
 
         //  FinishTime
-        public DateTime FinishTime { get; set; }
+        public DateOnly FinishTime { get; set; }
 
         //  TourleaderId
         public int TourleaderId { get; set; }

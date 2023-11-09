@@ -29,7 +29,7 @@ namespace Database.Configurations
             builder.Property(car => car.Year).HasColumnName("Year").HasColumnType("int").IsRequired();
 
             //  Number of car
-            builder.Property(car => car.CarNumber).HasColumnName("CarNumber").HasColumnType("nvarchar(20)").IsRequired();
+            builder.Property(car => car.CarNumber).HasColumnName("CarNumber").HasColumnType("nvarchar(20)").IsUnicode().IsRequired();
 
             //  Count of seats
             builder.Property(car => car.SeatCount).HasColumnName("SeatCount").HasColumnType("int").IsRequired();

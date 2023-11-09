@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\Tour_FinalProject\Tour_EF_FinalProject\TourFinalProject_EF\WpfApp\App.xaml
-4-1505362196
+5-1633683267
 
-92036572065
+13-1990447897
 234947382051
-Views\AdminViews\AdminView.xaml;Views\StartViews\LoginView.xaml;Views\StartViews\RegisterView.xaml;Views\TouristViews\TouristView.xaml;
+Views\AdminViews\AdminView.xaml;Views\StartViews\LoginView.xaml;Views\StartViews\RegisterView.xaml;Views\TouristViews\BuyTicketView.xaml;Views\TouristViews\TouristView.xaml;
 
 False
 

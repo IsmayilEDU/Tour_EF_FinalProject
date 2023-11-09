@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp.ViewModels;
+using WpfApp.ViewModels.TouristViewModels;
 using WpfApp.Views.StartViews;
 
 namespace WpfApp.Views.TouristViews
@@ -23,7 +24,7 @@ namespace WpfApp.Views.TouristViews
     /// </summary>
     public partial class TouristView : Window
     {
-        TouristViewModel touristViewModel;
+        private TouristViewModel touristViewModel;
         public TouristView(ref TourDbContext dbContext, ref Tourist SelectedTourist)
         {
             InitializeComponent();
@@ -32,16 +33,10 @@ namespace WpfApp.Views.TouristViews
             ListOTours.SelectedIndex = 0;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            LoginView secondWindow = new();
-            secondWindow.Show(); // Show the second window
-            this.Close(); // Close the current window
-        }
 
         private void ListOfLocationsName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            touristViewModel.SelectedItem
+            touristViewModel.SelectedNameOfLocation = listView_LocationsName.SelectedItem as string;
         }
     }
 }

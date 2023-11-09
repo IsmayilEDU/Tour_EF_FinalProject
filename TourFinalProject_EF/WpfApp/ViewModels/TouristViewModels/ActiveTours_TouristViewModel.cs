@@ -5,6 +5,7 @@ using Models.DTO;
 using Models.Entities.DerivedEntities;
 using System.Collections.Generic;
 using System.Linq;
+using WpfApp.Views.StartViews;
 using WpfApp.Views.TouristViews;
 
 namespace WpfApp.ViewModels.TouristViewModels
@@ -25,7 +26,7 @@ namespace WpfApp.ViewModels.TouristViewModels
         #region Public
 
         public string CredentialsProviderOfMap { get; set; }
-        public TourDbContext DbContext { get; set; }
+        public TourDbContext DbContext { get; set;}
         public Tourist SelectedTourist { get; set; }
         public List<Tour> ActiveTours { get; set; }
 
@@ -74,16 +75,31 @@ namespace WpfApp.ViewModels.TouristViewModels
         #region Command functions
         private void BuyTicket()
         {
-            BuyTicketView()
+            Ticket ticket = GetTicket(SelectedTour);
+            BuyTicketView buyTicketView = null;
+            buyTicketView = new BuyTicketView(buyTicketView!, DbContext, SelectedTourist,ref ticket);
+            buyTicketView.Show();
         }
 
         private void BackToLogin()
         {
-
+            new LoginView().Show();
+            _thisView.Close();
         }
         #endregion
 
         #region Other functions
+        //  Get Ticket which relation with tour
+        private Ticket GetTicket(Tour selectedTour)
+        {
+            var ticket = (from Ticket in DbContext.Tickets
+                         join Tour in DbContext.Tours on Ticket.TourId equals Tour.Id
+                         where Tour.Id == selectedTour.Id
+                         select Ticket).FirstOrDefault();
+
+            return ticket!;
+        }
+
         //  Get locations which relation with SelectedTour
         private void GetLocations(Tour selectedTour)
         {
@@ -123,12 +139,12 @@ namespace WpfApp.ViewModels.TouristViewModels
         {
             CredentialsProviderOfMap = MyConfigurations.MyConfigurations.CredentialsProviderOfMap;
             _thisView = thisView;
-            BackToLogin_Command = new RelayCommand(BackToLogin);
-            BuyTicket_Command = new RelayCommand(BuyTicket);
             DbContext = dbContext;
             ActiveTours = DbContext.Tours.Where(tour => tour.IsActive == true).ToList();
             SelectedTour = ActiveTours[0];
             GetLocations(SelectedTour);
+            BackToLogin_Command = new RelayCommand(BackToLogin);
+            BuyTicket_Command = new RelayCommand(BuyTicket);
         }
         #endregion
 

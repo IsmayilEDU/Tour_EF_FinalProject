@@ -37,6 +37,7 @@
                 <!--Button of Exit-->
 
                 <Button 
+                    Command="{Binding Exit_Command}"
                         HorizontalAlignment="Right"  
                       IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                       Style="{StaticResource MaterialDesignIconForegroundButton}"

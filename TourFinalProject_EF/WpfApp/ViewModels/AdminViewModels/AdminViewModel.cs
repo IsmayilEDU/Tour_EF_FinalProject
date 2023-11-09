@@ -26,7 +26,7 @@ namespace WpfApp.ViewModels.AdminViewModels
 
         #region Commands
 
-        public RelayCommand ExitCommand { get; set; }
+        public RelayCommand Exit_Command { get; set; }
 
         #endregion
 
@@ -261,7 +261,7 @@ namespace WpfApp.ViewModels.AdminViewModels
         #region Constructor
         public AdminViewModel(AdminView thisView,ref TourDbContext tourDb)
         {
-            ExitCommand = new RelayCommand(exit);
+            Exit_Command = new RelayCommand(exit);
             _thisView= thisView;
             TourDTOs = TourDTOFromDB(ref tourDb);
             TouristDTOs = TouristDTOFromDB(ref tourDb);

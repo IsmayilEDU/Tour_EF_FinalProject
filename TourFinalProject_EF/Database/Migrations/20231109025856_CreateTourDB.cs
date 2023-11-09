@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Database.Migrations
 {
-    public partial class first : Migration
+    public partial class CreateTourDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -58,6 +58,21 @@ namespace Database.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Tourleaders",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(20)", nullable: false),
+                    Surname = table.Column<string>(type: "nvarchar(20)", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(20)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tourleaders", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Drivers",
                 columns: table => new
                 {
@@ -100,28 +115,6 @@ namespace Database.Migrations
                         name: "FK_BankCards_Tourists_TouristId",
                         column: x => x.TouristId,
                         principalTable: "Tourists",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Tourleaders",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    bankCardId = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(20)", nullable: false),
-                    Surname = table.Column<string>(type: "nvarchar(20)", nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(20)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Tourleaders", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Tourleaders_BankCards_bankCardId",
-                        column: x => x.bankCardId,
-                        principalTable: "BankCards",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -258,11 +251,6 @@ namespace Database.Migrations
                 column: "TouristId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tourleaders_bankCardId",
-                table: "Tourleaders",
-                column: "bankCardId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_TourLocations_LocationId",
                 table: "TourLocations",
                 column: "LocationId");
@@ -281,6 +269,9 @@ namespace Database.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "BankCards");
+
+            migrationBuilder.DropTable(
                 name: "CarTours");
 
             migrationBuilder.DropTable(
@@ -296,6 +287,9 @@ namespace Database.Migrations
                 name: "Cars");
 
             migrationBuilder.DropTable(
+                name: "Tourists");
+
+            migrationBuilder.DropTable(
                 name: "Locations");
 
             migrationBuilder.DropTable(
@@ -303,12 +297,6 @@ namespace Database.Migrations
 
             migrationBuilder.DropTable(
                 name: "Tourleaders");
-
-            migrationBuilder.DropTable(
-                name: "BankCards");
-
-            migrationBuilder.DropTable(
-                name: "Tourists");
         }
     }
 }

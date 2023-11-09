@@ -16,6 +16,7 @@ namespace MyConfigurations
             ConnectionString = Configuration["ConnectionString"];
             UsernameOfAdmin = Configuration["Admin:Username"];
             PasswordOfAdmin = Configuration["Admin:Password"];
+            CredentialsProviderOfMap = Configuration["Admin:CredentialsProviderOfMap"];
         }
         #endregion
 
@@ -24,6 +25,7 @@ namespace MyConfigurations
         public static string ConnectionString { get; set; }
         public static string UsernameOfAdmin { get; set; }
         public static string PasswordOfAdmin { get; set; }
+        public static string CredentialsProviderOfMap { get; set; }
 
 
         #endregion

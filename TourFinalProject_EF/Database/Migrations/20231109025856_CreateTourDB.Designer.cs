@@ -12,19 +12,19 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Database.Migrations
 {
     [DbContext(typeof(TourDbContext))]
-    [Migration("20231106183734_first")]
-    partial class first
+    [Migration("20231109025856_CreateTourDB")]
+    partial class CreateTourDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.23")
+                .HasAnnotation("ProductVersion", "6.0.24")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.BankCard", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.BankCard", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -68,7 +68,7 @@ namespace Database.Migrations
                     b.ToTable("BankCards");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Car", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Car", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -105,7 +105,7 @@ namespace Database.Migrations
                     b.ToTable("Cars");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.CarTour", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.CarTour", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -131,7 +131,7 @@ namespace Database.Migrations
                     b.ToTable("CarTours");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Driver", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Driver", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -171,7 +171,7 @@ namespace Database.Migrations
                     b.ToTable("Drivers");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Location", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Location", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -200,7 +200,7 @@ namespace Database.Migrations
                     b.ToTable("Locations");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Ticket", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Ticket", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -230,7 +230,7 @@ namespace Database.Migrations
                     b.ToTable("Tickets");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Tour", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Tour", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -262,7 +262,7 @@ namespace Database.Migrations
                     b.ToTable("Tours");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Tourist", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Tourist", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -301,7 +301,7 @@ namespace Database.Migrations
                     b.ToTable("Tourists");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Tourleader", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Tourleader", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -325,17 +325,12 @@ namespace Database.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("Surname");
 
-                    b.Property<int>("bankCardId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("bankCardId");
 
                     b.ToTable("Tourleaders");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.TourLocation", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.TourLocation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -361,26 +356,26 @@ namespace Database.Migrations
                     b.ToTable("TourLocations");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.BankCard", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.BankCard", b =>
                 {
-                    b.HasOne("Models.Classes.DeriverdClasses.Tourist", "tourist")
+                    b.HasOne("Models.Entities.DerivedEntities.Tourist", "tourist")
                         .WithOne("bankCard")
-                        .HasForeignKey("Models.Classes.DeriverdClasses.BankCard", "TouristId")
+                        .HasForeignKey("Models.Entities.DerivedEntities.BankCard", "TouristId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("tourist");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.CarTour", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.CarTour", b =>
                 {
-                    b.HasOne("Models.Classes.DeriverdClasses.Car", "Car")
+                    b.HasOne("Models.Entities.DerivedEntities.Car", "Car")
                         .WithMany("CarTours")
                         .HasForeignKey("CarId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Models.Classes.DeriverdClasses.Tour", "Tour")
+                    b.HasOne("Models.Entities.DerivedEntities.Tour", "Tour")
                         .WithMany("CarTours")
                         .HasForeignKey("TourId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -391,24 +386,24 @@ namespace Database.Migrations
                     b.Navigation("Tour");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Driver", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Driver", b =>
                 {
-                    b.HasOne("Models.Classes.DeriverdClasses.Car", "Car")
+                    b.HasOne("Models.Entities.DerivedEntities.Car", "Car")
                         .WithOne("Driver")
-                        .HasForeignKey("Models.Classes.DeriverdClasses.Driver", "CarId")
+                        .HasForeignKey("Models.Entities.DerivedEntities.Driver", "CarId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Car");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Ticket", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Ticket", b =>
                 {
-                    b.HasOne("Models.Classes.DeriverdClasses.Tour", "Tour")
+                    b.HasOne("Models.Entities.DerivedEntities.Tour", "Tour")
                         .WithMany("Tickets")
                         .HasForeignKey("TourId");
 
-                    b.HasOne("Models.Classes.DeriverdClasses.Tourist", "Tourist")
+                    b.HasOne("Models.Entities.DerivedEntities.Tourist", "Tourist")
                         .WithMany("Tickets")
                         .HasForeignKey("TouristId");
 
@@ -417,9 +412,9 @@ namespace Database.Migrations
                     b.Navigation("Tourist");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Tour", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Tour", b =>
                 {
-                    b.HasOne("Models.Classes.DeriverdClasses.Tourleader", "Tourleader")
+                    b.HasOne("Models.Entities.DerivedEntities.Tourleader", "Tourleader")
                         .WithMany("Tours")
                         .HasForeignKey("TourleaderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -428,26 +423,15 @@ namespace Database.Migrations
                     b.Navigation("Tourleader");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Tourleader", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.TourLocation", b =>
                 {
-                    b.HasOne("Models.Classes.DeriverdClasses.BankCard", "bankCard")
-                        .WithMany()
-                        .HasForeignKey("bankCardId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("bankCard");
-                });
-
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.TourLocation", b =>
-                {
-                    b.HasOne("Models.Classes.DeriverdClasses.Location", "Location")
+                    b.HasOne("Models.Entities.DerivedEntities.Location", "Location")
                         .WithMany("TourLocations")
                         .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Models.Classes.DeriverdClasses.Tour", "Tour")
+                    b.HasOne("Models.Entities.DerivedEntities.Tour", "Tour")
                         .WithMany("TourLocations")
                         .HasForeignKey("TourId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -458,7 +442,7 @@ namespace Database.Migrations
                     b.Navigation("Tour");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Car", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Car", b =>
                 {
                     b.Navigation("CarTours");
 
@@ -466,12 +450,12 @@ namespace Database.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Location", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Location", b =>
                 {
                     b.Navigation("TourLocations");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Tour", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Tour", b =>
                 {
                     b.Navigation("CarTours");
 
@@ -480,7 +464,7 @@ namespace Database.Migrations
                     b.Navigation("TourLocations");
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Tourist", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Tourist", b =>
                 {
                     b.Navigation("Tickets");
 
@@ -488,7 +472,7 @@ namespace Database.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Models.Classes.DeriverdClasses.Tourleader", b =>
+            modelBuilder.Entity("Models.Entities.DerivedEntities.Tourleader", b =>
                 {
                     b.Navigation("Tours");
                 });

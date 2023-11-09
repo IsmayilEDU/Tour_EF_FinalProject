@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database.Contexts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp.ViewModels.AdminViewModels;
 
 namespace WpfApp.Views.AdminViews
 {
@@ -19,9 +21,11 @@ namespace WpfApp.Views.AdminViews
     /// </summary>
     public partial class AdminView : Window
     {
+        private TourDbContext DbContext = new();
         public AdminView()
         {
             InitializeComponent();
+            DataContext = new AdminViewModel(this, ref DbContext);
         }
     }
 }

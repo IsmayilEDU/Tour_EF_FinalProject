@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp.ViewModels.StartViewModels;
 
 namespace WpfApp.Views.StartViews
 {
@@ -22,6 +23,14 @@ namespace WpfApp.Views.StartViews
         public LoginView()
         {
             InitializeComponent();
+            DataContext = new LoginViewModel
+                (
+                this,
+                ref textbox_Username,
+                ref passwordBox_Password,
+                ref radiobutton_Admin,
+                ref radiobutton_Tourist
+                );
         }
 
         private void button_Exit_Click(object sender, RoutedEventArgs e)

@@ -16,6 +16,12 @@
     <Compile Update="Views\StartViews\RegisterView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\TouristViews\BuyTicketView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TouristViews\TouristView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\AdminViews\AdminView.xaml">
@@ -25,6 +31,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\StartViews\RegisterView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TouristViews\BuyTicketView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TouristViews\TouristView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

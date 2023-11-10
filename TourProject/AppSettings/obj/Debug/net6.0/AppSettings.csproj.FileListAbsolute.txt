@@ -1,0 +1,13 @@
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\bin\Debug\net6.0\AppSettings.deps.json
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\bin\Debug\net6.0\AppSettings.dll
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\bin\Debug\net6.0\AppSettings.pdb
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\obj\Debug\net6.0\AppSettings.csproj.AssemblyReference.cache
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\obj\Debug\net6.0\AppSettings.GeneratedMSBuildEditorConfig.editorconfig
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\obj\Debug\net6.0\AppSettings.AssemblyInfoInputs.cache
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\obj\Debug\net6.0\AppSettings.AssemblyInfo.cs
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\obj\Debug\net6.0\AppSettings.csproj.CoreCompileInputs.cache
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\obj\Debug\net6.0\AppSettings.dll
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\obj\Debug\net6.0\refint\AppSettings.dll
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\obj\Debug\net6.0\AppSettings.pdb
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\obj\Debug\net6.0\ref\AppSettings.dll
+C:\Ismayil\PROJECTS\StepIT\8.ADO.NET\TourProject\AppSettings\bin\Debug\net6.0\appsettings.json

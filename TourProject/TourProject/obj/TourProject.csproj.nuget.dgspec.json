@@ -1,0 +1,292 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\TourProject\\TourProject.csproj": {}
+  },
+  "projects": {
+    "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\AppSettings\\AppSettings.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\AppSettings\\AppSettings.csproj",
+        "projectName": "AppSettings",
+        "projectPath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\AppSettings\\AppSettings.csproj",
+        "packagesPath": "C:\\Users\\MSI NOTEBOOK\\.nuget\\packages\\",
+        "outputPath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\AppSettings\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MSI NOTEBOOK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Databases\\Databases.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Databases\\Databases.csproj",
+        "projectName": "Databases",
+        "projectPath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Databases\\Databases.csproj",
+        "packagesPath": "C:\\Users\\MSI NOTEBOOK\\.nuget\\packages\\",
+        "outputPath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Databases\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MSI NOTEBOOK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\AppSettings\\AppSettings.csproj": {
+                "projectPath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\AppSettings\\AppSettings.csproj"
+              },
+              "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Models\\Models.csproj": {
+                "projectPath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Models\\Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Models\\Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Models\\Models.csproj",
+        "projectName": "Models",
+        "projectPath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\MSI NOTEBOOK\\.nuget\\packages\\",
+        "outputPath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MSI NOTEBOOK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\TourProject\\TourProject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\TourProject\\TourProject.csproj",
+        "projectName": "TourProject",
+        "projectPath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\TourProject\\TourProject.csproj",
+        "packagesPath": "C:\\Users\\MSI NOTEBOOK\\.nuget\\packages\\",
+        "outputPath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\TourProject\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MSI NOTEBOOK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Databases\\Databases.csproj": {
+                "projectPath": "C:\\Ismayil\\PROJECTS\\StepIT\\8.ADO.NET\\TourProject\\Databases\\Databases.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Maps.MapControl.WPF": {
+              "target": "Package",
+              "version": "[1.0.0.3, )"
+            },
+            "MvvmLightLibs": {
+              "target": "Package",
+              "version": "[5.4.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
